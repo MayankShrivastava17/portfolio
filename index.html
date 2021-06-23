@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home</title>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"
+        rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <script src="https://kit.fontawesome.com/eeed48d253.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.8.0/js/all.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <!-- font -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet">
+    <!-- font-family:'Odibee Sans', cursive;" -->
+    <link href="https://fonts.googleapis.com/css2?family=Mate+SC&display=swap" rel="stylesheet">
+    <!-- font-family: 'Mate SC', serif; -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap" rel="stylesheet">
+    <!-- font-family: 'Oswald', sans-serif; -->
+    <link href="https://fonts.googleapis.com/css2?family=Limelight&display=swap" rel="stylesheet">
+    <!-- font-family: 'Limelight', cursive; -->
+    <link href="https://fonts.googleapis.com/css2?family=Sigmar+One&display=swap" rel="stylesheet">
+    <!-- font-family: 'Sigmar One', cursive; -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+    <!-- font-family: 'Roboto Slab', serif; -->
+    <!-- font-end -->
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="manifest" href="./favicon/site.webmanifest">
+    <style>
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #ccffff 0%, #ffffff 35%);
+            overflow-x: hidden;
+            /* padding-bottom: 50px; */
+        }
+
+
+        /* INTRO SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+        /* .intro {
+            background: #f45b69; 
+            padding: 10vh;
+        } */
+
+        .container {
+            /* width: 90%; */
+            /* max-width: 1200px; */
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+
+        /* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+        .timeline ul {
+            background: #ffffff;
+            padding: 50px 0;
+        }
+
+        .timeline ul li {
+            list-style-type: none;
+            position: relative;
+            width: 6px;
+            margin: 0 auto;
+            padding-top: 50px;
+            background: rgb(0, 0, 0);
+        }
+
+        .timeline ul li::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            background: inherit;
+            z-index: 1;
+        }
+
+        .timeline ul li div {
+            position: relative;
+            bottom: 0;
+            width: 400px;
+            padding: 15px;
+            background: #9ab973;
+        }
+
+        .timeline ul li div::before {
+            content: "";
+            position: absolute;
+            bottom: 7px;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .timeline ul li:nth-child(odd) div {
+            left: 45px;
+        }
+
+        .timeline ul li:nth-child(odd) div::before {
+            left: -15px;
+            border-width: 8px 16px 8px 0;
+            border-color: transparent #9ab973 transparent transparent;
+        }
+
+        .timeline ul li:nth-child(even) div {
+            left: -439px;
+        }
+
+        .timeline ul li:nth-child(even) div::before {
+            right: -15px;
+            border-width: 8px 0 8px 16px;
+            border-color: transparent transparent transparent #9ab973;
+        }
+
+        time {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+
+        /* EFFECTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+        .timeline ul li::after {
+            transition: background 0.5s ease-in-out;
+        }
+
+        .timeline ul li.in-view::after {
+            /* background: #f45b69; */
+            background: #9ab973;
+        }
+
+        .timeline ul li div {
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+        }
+
+        .timeline ul li:nth-child(odd) div {
+            transform: translate3d(200px, 0, 0);
+        }
+
+        .timeline ul li:nth-child(even) div {
+            transform: translate3d(-200px, 0, 0);
+        }
+
+        .timeline ul li.in-view div {
+            transform: none;
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .alert {
+            text-align: center;
+            padding: 10px;
+            background: #79c879;
+            color: #fff;
+            margin-bottom: 5vh;
+            display: none;
+        }
+
+
+        /* GENERAL MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+        @media screen and (max-width: 900px) {
+            .timeline ul li div {
+                width: 250px;
+            }
+
+            .timeline ul li:nth-child(even) div {
+                left: -289px;
+                /*250+45-6*/
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .timeline ul li {
+                margin-left: 20px;
+            }
+
+            .timeline ul li div {
+                width: calc(100vw - 91px);
+            }
+
+            .timeline ul li:nth-child(even) div {
+                left: 45px;
+            }
+
+            .timeline ul li:nth-child(even) div::before {
+                left: -15px;
+                border-width: 8px 16px 8px 0;
+                /* border-color: transparent #f45b69 transparent transparent; */
+            }
+        }
+
+
+        /* EXTRA/CLIP PATH STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+        .timeline-clippy ul li::after {
+            width: 40px;
+            height: 40px;
+            border-radius: 0;
+        }
+
+        .timeline-rhombus ul li::after {
+            clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+        }
+
+        .timeline-rhombus ul li div::before {
+            bottom: 12px;
+        }
+
+        .timeline-star ul li::after {
+            clip-path: polygon(50% 0%,
+                    61% 35%,
+                    98% 35%,
+                    68% 57%,
+                    79% 91%,
+                    50% 70%,
+                    21% 91%,
+                    32% 57%,
+                    2% 35%,
+                    39% 35%);
+        }
+
+        .timeline-heptagon ul li::after {
+            clip-path: polygon(50% 0%,
+                    90% 20%,
+                    100% 60%,
+                    75% 100%,
+                    25% 100%,
+                    0% 60%,
+                    10% 20%);
+        }
+
+        .timeline-infinite ul li::after {
+            animation: scaleAnimation 2s infinite;
+        }
+
+        @keyframes scaleAnimation {
+            0% {
+                transform: translateX(-50%) scale(1);
+            }
+
+            50% {
+                transform: translateX(-50%) scale(1.25);
+            }
+
+            100% {
+                transform: translateX(-50%) scale(1);
+            }
+        }
+
+        .footer {
+            /* text-align: center;
+            padding: 0px;
+            width: auto;
+            height: auto;
+            width: 100%; */
+            /* position: fixed; */
+            /* right: 0; */
+            /* bottom: 20px; */
+            /* display: flex; */
+            align-items: center;
+            padding: 5px;
+            /* display: flex; */
+            /* margin-left: 4px; */
+            /* color: black; */
+            /* background: rgba(255, 255, 255, 0.65); */
+        }
+
+        /* horzontal-line */
+        hr {
+            width: 50%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* tooltiptext */
+        [data-tooltip] {
+            position: relative;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        /* Hide the tooltip content by default */
+        [data-tooltip]:before,
+        [data-tooltip]:after {
+            visibility: hidden;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+            filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=0);
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Position tooltip above the element */
+        [data-tooltip]:before {
+            position: absolute;
+            bottom: 150%;
+            left: 50%;
+            margin-bottom: 5px;
+            margin-left: -80px;
+            padding: 7px;
+            width: 160px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            background-color: #000;
+            background-color: hsla(0, 0%, 20%, 0.9);
+            color: #fff;
+            content: attr(data-tooltip);
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.2;
+        }
+
+        /* Triangle hack to make tooltip look like a speech bubble */
+        [data-tooltip]:after {
+            position: absolute;
+            bottom: 150%;
+            left: 50%;
+            margin-left: -5px;
+            width: 0;
+            border-top: 5px solid #000;
+            border-top: 5px solid hsla(0, 0%, 20%, 0.9);
+            border-right: 5px solid transparent;
+            border-left: 5px solid transparent;
+            content: " ";
+            font-size: 0;
+            line-height: 0;
+        }
+
+        /* Show tooltip content on hover */
+        [data-tooltip]:hover:before,
+        [data-tooltip]:hover:after {
+            visibility: visible;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: progid: DXImageTransform.Microsoft.Alpha(Opacity=100);
+            opacity: 1;
+        }
+
+        /* scroll-bar  */
+        /* width */
+        ::-webkit-scrollbar {
+            width: 5px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 5px grey;
+            border-radius: 10px;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: grey;
+            border-radius: 10px;
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b30000;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- start-of-header  -->
+    <header>
+        <!-- start-of-navigation-bar  -->
+        <nav class="navbar is-light is-fixed-top" role="navigation" aria-label="main navigation" id="navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item animate__animated animate__zoomIn"
+                    style="text-decoration:none; font-family:'Mate SC',serif;font-weight:bold;padding:0;margin:0;font-size:5vh;"
+                    onClick="window.location.reload();" title="Show that animation once again.">
+                    ms.
+                </a>
+                <!-- adding-burger-when-open-in-small-screen  -->
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-end">
+
+                    <a class="navbar-item " style="text-decoration:none;font-family:'Roboto Slab',serif;"
+                        onclick="scrollPortfolio()">
+                        Portfolio
+                    </a>
+
+                    <a class="navbar-item" style="text-decoration:none;font-family:'Roboto Slab',serif;"
+                        href="about.html">
+                        About
+                    </a>
+
+
+                    <a class="navbar-item" style="text-decoration:none;font-family:'Roboto Slab',serif;"
+                        href="https://drive.google.com/file/d/1dAxxfWeWrdNKiSrehSnW9wL14Lbia9dC/view?usp=sharing"
+                        target="_blank">
+                        Resume
+                    </a>
+
+                    <a class="navbar-item" style="text-decoration:none;font-family:'Roboto Slab',serif;"
+                        href="https://itsmayankshrivastava.medium.com/" target="_blank">
+                        Blog
+                    </a>
+
+
+                    <a class="navbar-item " style="text-decoration:none;font-family:'Roboto Slab',serif;"
+                        onclick="scrollContactMe()">
+                        Contact
+                    </a>
+
+                    <a class="navbar-item" style="text-decoration:none;font-family:'Roboto Slab',serif;"
+                        href="https://www.linkedin.com/in/mayankshrivastava17/" target="_blank">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+
+                    <a class="navbar-item" style="text-decoration:none;font-family:'Roboto Slab',serif;"
+                        href="https://github.com/MayankShrivastava17" target="_blank">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <!-- end-of-navigation-bar   -->
+    </header>
+    <!-- end-of-header  -->
+    <!-- start-of-main-body -->
+
+    <br><br><br><br><br><br><br><br><br>
+    <!-- short-intro  -->
+    <p class="title is-2 animate__animated animate__bounceInDown animate__slow" style="text-align:center;">
+        <strong>Hello! I am Mayank</strong>,<br>
+        a machine learning enthusiast<br>
+        and frontend web developer.
+    </p>
+    <br><br><br><br><br><br><br><br><br>
+
+    <!-- three-of-the-recent-work  -->
+    <div id="port"><br><br><br>
+        <p class="subtitle is-4 animate__animated animate__slideInRight animate__slow"
+            style="text-align:left;padding-left:5vh;">
+            <strong>Recents Works :</strong>
+        </p>
+        <br><br>
+
+        <p class="subtitle is-4 animate__animated animate__slideInLeft animate__slower"
+            style="text-align:right;padding-right:5vh;">
+            <strong>hook</strong><br>
+            Movie recommendtion using sklearn,
+            Enter the movie of<br> your choice
+            and get 10 movies of similar kind. <br>
+            <a href="https://github.com/MayankShrivastava17/hook" style="text-decoration:none;" target="_blank">Source
+                Code</a>
+            |
+            <a href="https://hookmeup.herokuapp.com/" style="text-decoration:none;" target="_blank">Deployment</a>
+        </p>
+        <br>
+
+        <p class="subtitle is-4  animate__animated animate__slideInRight animate__slower"
+            style="text-align:left;padding-left:5vh;">
+            <strong>url-shortner</strong><br>
+            Enter the any url and get a shorten url. <br>
+            <a href="https://github.com/MayankShrivastava17/url-shortner" style="text-decoration:none;"
+                target="_blank">Source Code</a>
+            |
+            <a href="https://url-sharpener.herokuapp.com/" style="text-decoration:none;" target="_blank">Deployment</a>
+        </p>
+        <br>
+
+        <p class="subtitle is-4 animate__animated animate__slideInLeft animate__slower"
+            style="text-align:right;padding-right:5vh;">
+            <strong>Iris Recognition</strong><br>
+            Web based iris recognition,
+            just enter<br>
+            sepal length, sepal width,
+            petal length and petal width<br>
+            and it will classify between
+            setosa, versicolor and viginica.<br>
+            <a href="https://github.com/MayankShrivastava17/web-based-iris-recognition" style="text-decoration:none;"
+                target="_blank">Source Code</a>
+        </p>
+        <br>
+
+        <p class="subtitle is-4  animate__animated animate__slideInRight animate__slower"
+            style="text-align:left;padding-left:5vh;">
+            <strong>Lyrically</strong><br>
+            Enter the artist and song name, and<br>
+            get the lyrics of the song,
+            using genius api.<br>
+            <a href="https://github.com/MayankShrivastava17/lyrically" style="text-decoration:none;"
+                target="_blank">Source Code</a>
+            |
+            <a href="https://python-lyrically.herokuapp.com/" style="text-decoration:none;"
+                target="_blank">Deployment</a>
+        </p>
+    </div>
+    <br><br><br><br>
+
+    <!-- contact-form-with-firebase-as-backend  -->
+    <div class="container" id="contant"><br><br><br>
+        <h1 class="title is-3 animate__animated animate__slideInRight animate__slower" style="text-align:center;">
+            Contact Me</h1>
+        <div class="wrapper animate__animated animate__slideInLeft animate__slower">
+            <div class="alert">Your message has been sent</div>
+            <form id="contactForm" style="text-align:center;">
+
+                <label for="name" style="text-align:left;font-weight:bold;font-size:1em;">Name *</label>
+                <div class="control has-icons-left">
+                    <input type="text" name="name" id="name" class="input is-success is-normal"
+                        placeholder="Mayank Shrivastava" style="height:7vh;" required>
+                    <span class="icon is-left is-small">
+                        <i class="fa fa-user"></i>
+                    </span>
+                </div>
+
+                <label for="name" style="text-align:left;font-weight:bold;font-size:1em;">Email *</label>
+                <div class="control has-icons-left">
+                    <input type="email" name="email" id="email" class="input is-success is-normal"
+                        placeholder="mayanksri910@gmail.com" style="height:7vh;" required>
+                    <span class="icon is-left is-small">
+                        <i class="fa fa-envelope"></i>
+                    </span>
+                </div>
+
+                <label for="name" style="text-align:left;font-weight:bold;font-size:1em;">Message *</label>
+                <textarea class="textarea is-success" id="message" placeholder="" required></textarea>
+                <br><br>
+
+                <button class="button is-large is-fullwidth is-danger is-light" type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <br><br>
+
+    <!-- end-of-main-body -->
+
+    <!-- footer  -->
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <a class="subtitle is-6" href="https://github.com/MayankShrivastava17/portfolio" target="_blank">
+                    *Source code is available in Github
+                </a>
+                <br>
+                <a href="https://www.instagram.com/mayank.shrivastavaa/" target="_blank"><i class="fab fa-instagram"
+                        style="font-size:30px;margin:5px;"></i>
+                </a>
+                <a href="https://github.com/MayankShrivastava17" target="_blank">
+                    <i class="fab fa-github" style="font-size:30px;margin:5px;"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/mayankshrivastava17/" target="_blank">
+                    <i class="fab fa-linkedin-in" style="font-size:30px;margin:5px;"></i>
+                </a>
+                <a href="https://codepen.io/mpamt" target="_blank"><i class="fab fa-codepen"
+                        style="font-size:30px;margin:5px;"></i>
+                </a>
+                <a href="https://www.hackerrank.com/MPAMT" target="_blank"><i class="fab fa-hackerrank"
+                        style="font-size:30px;margin:5px;"></i>
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- to-connect-to-firebase  -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase.js"></script>
+    <!-- connection-to-firebase-analytics  -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-analytics.js"></script>
+    <!-- scroll-and-burger  -->
+    <script src="script.js"></script>
+</body>
+
+</html>
