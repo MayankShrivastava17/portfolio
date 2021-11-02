@@ -383,6 +383,76 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #b30000;
         }
+        
+                #tt {
+            font-family: 'Mate SC', serif;
+            font-weight: bold;
+            padding: 0;
+            margin: 0;
+            font-size: 3.5vh;
+            display: flex;
+        }
+
+        #tt:hover>#first {
+            width: calc(9.5vh);
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+        }
+
+        #tt:hover>#last {
+            width: calc(5vh + 12vh);
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+        }
+
+        #tt span {
+            font-weight: bold;
+            width: 0;
+            overflow: hidden;
+            transition: all 0.7s ease-in;
+            transition: all 0.7s ease-out;
+            margin: 0;
+            padding: 0;
+        }
+
+        @media screen and (max-width: 900px) {
+            #tt {
+                font-family: 'Mate SC', serif;
+                font-weight: bold;
+                padding: 0;
+                margin: 0;
+                font-size: 3.5vh;
+                display: flex;
+            }
+
+            #tt:hover>#first {
+                /* width: calc(50vh + 12vh); */
+                width: calc(7.5vh);
+                margin: 0;
+                padding: 0;
+                font-weight: bold;
+            }
+
+            #tt:hover>#last {
+                /* width: calc(25vh + 12vh); */
+                width: calc(16.5vh);
+                margin: 0;
+                padding: 0;
+                font-weight: bold;
+            }
+
+            #tt span {
+                font-weight: bold;
+                width: 0;
+                overflow: hidden;
+                transition: all 0.2s ease-in;
+                transition: all 0.5s ease-out;
+                margin: 0;
+                padding: 0;
+            }
+        }
     </style>
 </head>
 
@@ -390,10 +460,15 @@
     <header>
         <nav class="navbar is-light is-fixed-top" role="navigation" aria-label="main navigation">
             <div class="navbar-brand">
-                <a class="navbar-item animate__animated animate__zoomIn"
-                    style="text-decoration:none; font-family:'Mate SC',serif;font-weight:bold;padding:0;margin:0;font-size:5vh;"
-                    onClick="window.location.reload();" title="Show that animation once again.">
-                    ms.
+                <a class="navbar-item animate__animated animate__zoomIn" style="text-decoration:none;"
+                    onClick="window.location.reload();" title="Hello There.👋">
+                    <!-- ms. -->
+                    <!-- tt  -->
+                    <p id="tt" style="margin:0;padding:0;font-weight:bold;">
+                        M<span id="first" style="margin:0;padding:0;font-weight:bold;">ayank</span>
+                        S<span id="last" style="margin:0;padding:0;font-weight:bold;">hrivastava</span>.
+                    </p>
+                    <!-- end  -->
                 </a>
                 <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
                     data-target="navbarBasicExample">
@@ -406,12 +481,12 @@
                 <div class="navbar-end">
                     <a class="navbar-item" style="text-decoration:none;font-family:'Roboto Slab',serif;"
                         href="index.html">
-                        Home
+                        <strong>Home</strong>
                     </a>
 
                     <a class="navbar-item" style="text-decoration:none;font-family:'Roboto Slab',serif;"
                         onClick="scrollSkill()">
-                        Skill
+                        <strong>Skill</strong>
                     </a>
 
                     <a class="navbar-item" style="text-decoration:none;font-family:'Roboto Slab',serif;"
@@ -426,13 +501,13 @@
 
                     <a class="navbar-item" style="text-decoration:none;font-family:'Roboto Slab',serif;"
                         href="https://itsmayankshrivastava.medium.com/" target="_blank">
-                        Blog
+                        <strong>Blog</strong>
                     </a>
 
                     <a class="navbar-item" style="text-decoration:none;font-family:'Roboto Slab',serif;"
                         href="https://drive.google.com/file/d/1dAxxfWeWrdNKiSrehSnW9wL14Lbia9dC/view?usp=sharing"
                         target="_blank">
-                        Resume
+                        <strong>Resume</strong>
                     </a>
 
                     <!-- <a class="navbar-item" style="text-decoration:none;font-family:'Roboto Slab',serif;"
